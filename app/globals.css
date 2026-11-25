@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * GLOBAL THEMES — every color the site uses comes from these variables.
+ * The active theme is set by <html data-theme="green|blue"> (see ThemeToggle).
+ * To add a theme, copy a block below and change the values; no component edits needed.
+ *
+ * Roles (same in every theme):
+ *   brand-600 primary · brand-700 hover · brand-300 highlight on dark ·
+ *   brand-900/950 dark sections · brand-50 / surface-muted light sections ·
+ *   accent badge/headline highlight on dark · ink-muted sub text · line borders
+ */
+:root,
+[data-theme="green"] {
+  --brand-50: #f1f8f3;
+  --brand-100: #dcefe1;
+  --brand-200: #b9dfc4;
+  --brand-300: #8cc9a0;
+  --brand-400: #5aae78;
+  --brand-500: #3a935c;
+  --brand-600: #2b7848;
+  --brand-700: #235e3a;
+  --brand-800: #1d4b30;
+  --brand-900: #123423;
+  --brand-950: #0b2216;
+
+  --accent: #c9e265;
+  --surface: #ffffff;
+  --surface-muted: #f1f8f3;
+  --ink: #0a0a0a;
+  --ink-muted: #51655a;
+  --line: #dbe7de;
+  --danger: #b42318;
+}
+
+/* Blue theme — values taken from the reference website's own CSS */
+[data-theme="blue"] {
+  --brand-50: #f3f8fc;
+  --brand-100: #deeefb;
+  --brand-200: #b6dcf7;
+  --brand-300: #16c7f3; /* reference "cyan" highlight */
+  --brand-400: #3aa6f0;
+  --brand-500: #2491ec;
+  --brand-600: #087fe8; /* reference primary */
+  --brand-700: #066dc8; /* reference primary hover */
+  --brand-800: #0a5aa3;
+  --brand-900: #06283d; /* reference navy-2 */
+  --brand-950: #031b2b; /* reference navy */
+
+  --accent: #16c7f3;
+  --surface: #ffffff;
+  --surface-muted: #f3f8fc;
+  --ink: #0a0a0a;
+  --ink-muted: #5f7180;
+  --line: #e1eaf1;
+  --danger: #b42318;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-danger: var(--danger);
+
+  --font-sans: var(--font-sans-var), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-sans);
+
+  --radius-card: 1.5rem;
+  --radius-btn: 0.75rem; /* buttons: rounded rectangle like the reference (not pill) */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global typography tokens — tweak weights here to retune the whole site */
+:root {
+  --weight-body: 400;
+  --weight-heading: 800;
+}
+
+h1, h2, h3, h4 {
+  font-weight: var(--weight-heading);
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+/* Shared chrome heights — the hero fills what is left of the viewport */
+:root {
+  --header-h: 72px;
+  --topbar-h: 40px; /* top bar only shows from md up */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* in-page anchors (#solutions, #enquiry…) land below the sticky header */
+[id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-body);
+}
+
+/* Hero slide progress bar */
+@keyframes hero-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.hero-progress {
+  transform-origin: left;
+  animation: hero-progress linear forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-progress { animation: none; transform: scaleX(1); }
+}
+
+/* ───────────── MOTION (shared by every page) ─────────────
+ * Values copied from the reference site. Keep all animation tokens here.
+ * 1) Scroll reveal  — wrap anything in <Reveal delay={0-4}> (components/ui/Reveal.tsx); SectionHeading does it itself
+ * 2) Hover lift     — .hover-lift (card) · .img-zoom (photo inside a .group card) · Button handles itself
+ * 3) Pulse dot      — .pulse-dot
+ * Everything is disabled under prefers-reduced-motion (and reveal never hides content without JS).
+ */
+.reveal {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-ready .reveal:not(.in) {
+  opacity: 0;
+  transform: translateY(32px);
+}
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+
+@utility hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 48px color-mix(in oklab, var(--brand-950) 10%, transparent);
+    border-color: transparent;
+  }
+}
+@utility hover-lift-sm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 48px color-mix(in oklab, var(--brand-950) 10%, transparent);
+    border-color: transparent;
+  }
+}
+@utility img-zoom {
+  transition: transform 0.6s ease;
+  .group:hover & {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 70%, transparent); }
+  70% { box-shadow: 0 0 0 10px color-mix(in oklab, var(--accent) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 0%, transparent); }
+}
+.pulse-dot {
+  animation: pulse-ring 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; }
+  .pulse-dot { animation: none; }
+  .hover-lift:hover, .hover-lift-sm:hover { transform: none; }
+  .img-zoom { transition: none; }
+}
+
+/* Logo marquee */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* Reusable layout helpers */
+@utility container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 1024px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility hero-h {
+  height: calc(100svh - var(--header-h) - 1px); /* 1px = header border */
+  min-height: 560px;
+  @media (min-width: 768px) {
+    height: calc(100svh - var(--header-h) - var(--topbar-h) - 1px);
+  }
+}
+
+@utility section-y {
+  padding-block: 4rem;
+  @media (min-width: 1024px) {
+    padding-block: 6rem;
+  }
 }

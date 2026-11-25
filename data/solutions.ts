@@ -1,0 +1,241 @@
+import type { SolutionsPageData } from "@/types/solutions";
+
+/**
+ * Copy for the Water and Air category pages. Both render through <SolutionsPage>.
+ * Product links point at /products/<slug> (built with the product pages).
+ */
+export const waterPage: SolutionsPageData = {
+  seo: {
+    title: "Water Solutions",
+    description: "Stainless steel tanks, pressure boosters, softeners, RO purification and more — practical water solutions for homes, buildings and industry.",
+  },
+  hero: {
+    eyebrow: "Water & Air Solutions",
+    title: "Better water.",
+    accent: "Better living.",
+    text: "From water storage and pressure boosting to treatment, softening and fresh-air systems, we bring practical solutions together for modern homes, commercial buildings and industrial environments.",
+    video: "/media/solutions/water-hero.mp4",
+    poster: "/media/solutions/water-hero-poster.jpg",
+    primary: { label: "Explore Our Products", href: "#range" },
+    secondary: { label: "Find Your Solution", href: "/contact-us" },
+    chips: ["Water Treatment", "Water Storage", "Pressure Systems", "Fresh Air"],
+  },
+  facts: [
+    { title: "Water Quality", text: "Filtration, RO & softening" },
+    { title: "Water Pressure", text: "Booster & pumping systems" },
+    { title: "Water Storage", text: "Stainless steel tanks" },
+    { title: "Indoor Air", text: "Ventilation & ERV systems" },
+  ],
+  intro: {
+    eyebrow: "Complete Solutions. One Partner.",
+    title: "Designed around the way",
+    accent: "water works.",
+    paragraphs: [
+      "We bring together water movement, water treatment, storage and indoor air solutions for domestic, commercial and industrial applications. Our range supports requirements from everyday home comfort to building-services and project applications.",
+      "Every site has different needs. Product selection should consider water quality, required flow and pressure, storage capacity, space, operating conditions and the technical specifications of the project.",
+    ],
+    miniCards: [
+      { title: "Application-led selection", text: "Choose product categories based on your site and system requirements." },
+      { title: "Integrated product range", text: "Explore water quality, storage, pressure and air solutions in one place." },
+      { title: "Residential to industrial", text: "Solutions for homes, buildings, institutions and facilities." },
+      { title: "Sales & service support", text: "Contact our team for product and application enquiries." },
+    ],
+    image: "/media/solutions/water-intro.png",
+    caption: "Engineered water and air solutions for everyday performance",
+  },
+  range: {
+    eyebrow: "Explore the Range",
+    title: "The right solution for",
+    accent: "every drop.",
+    description: "Explore our key water, storage, pressure and indoor-air product categories. For exact models, capacity, specifications and availability, contact our team or visit the relevant product page.",
+    items: [
+      { badge: "Water Storage", kicker: "Durable storage", title: "Stainless Steel Water Tanks", text: "Stainless steel water storage options for residential and commercial needs, with insulated and non-insulated configurations available across selected ranges.", image: "/media/solutions/tanks.png", tags: ["SS304 / SS316L options", "Insulated options"], href: "/products/stainless-steel-water-tanks", link: "Explore Water Tanks" },
+      { badge: "Water Pressure", kicker: "Consistent flow", title: "Water Pressure Boosters", text: "Pressure-boosting systems for reliable water delivery across showers, taps, plumbing networks and building-services applications.", image: "/media/solutions/booster.png", tags: ["Automatic models", "Residential & commercial"], href: "/products/pressure-booster", link: "Explore Pressure Boosters" },
+      { badge: "Water Treatment", kicker: "Hard water management", title: "Auto Water Softener & Filters", text: "Water-softening and filtration solutions for applications affected by hardness and unwanted particles. Select a configuration after reviewing water analysis and usage.", image: "/media/solutions/softener.png", tags: ["Softening", "Filtration"], href: "/products/softener-filter", link: "Ask About Softeners" },
+      { badge: "Water Purification", kicker: "Purification systems", title: "RO & Water Purification", text: "Reverse osmosis and purification product categories for suitable residential, commercial or process-water requirements, subject to feed-water quality and design.", image: "/media/solutions/ro.png", tags: ["Water purification", "Application-specific"], href: "/products/ro-water-purification", link: "Discuss RO Requirements" },
+      { badge: "Indoor Air", kicker: "Fresh-air ventilation", title: "Indoor Fresh Air Systems (ERV)", text: "Energy recovery ventilation systems designed to exchange stale indoor air with incoming outdoor air while helping manage heat and moisture transfer.", image: "/media/solutions/erv.png", tags: ["Fresh-air exchange", "Indoor air management"], href: "/products/fresh-air-erv", link: "Explore ERV Systems" },
+      { badge: "Air Movement", kicker: "Ventilation solutions", title: "Ventilation Systems", text: "Ventilation and air movement solutions for building-services applications. System selection depends on air volume, layout, acoustic needs and site conditions.", image: "/media/solutions/ventilation.png", tags: ["Air movement", "Building services"], href: "/products/ventilation-system", link: "Explore Ventilation" },
+      { badge: "Energy & Comfort", kicker: "Heating solutions", title: "Heat Pumps", text: "Heat pump product category for suitable hot-water and heating applications. Capacity and configuration should match building demand and installation conditions.", image: "/media/solutions/heat-pump.png", tags: ["Hot-water applications", "Efficient technology"], href: "/products/heat-pumps", link: "Ask About Heat Pumps" },
+      { badge: "Home Water", kicker: "Water technology", title: "Alkaline Water Systems", text: "Alkaline water product options for home-use applications. Review product specifications and suitability with our team before choosing a system.", image: "/media/solutions/alkaline.png", tags: ["Home-use applications", "Water technology"], href: "/products/alkaline-water", link: "Explore Alkaline Water" },
+    ],
+  },
+  steps: {
+    eyebrow: "A System-Led Approach",
+    title: "From source to",
+    accent: "point of use.",
+    description: "The right combination of equipment depends on source water, required quality, storage, pressure and end-use needs.",
+    items: [
+      { title: "Understand water quality", text: "Review source water, hardness, impurities and intended application before choosing treatment." },
+      { title: "Treat & condition", text: "Consider suitable filtration, RO or softening options based on technical requirements." },
+      { title: "Store & move", text: "Plan suitable storage and pumping or pressure systems for required flow and demand." },
+      { title: "Support indoor comfort", text: "Explore ventilation and fresh-air options for suitable building and indoor-air applications." },
+    ],
+  },
+  feature: { video: "/media/solutions/water-process.mp4", poster: "/media/solutions/water-process-poster.jpg" },
+  uses: {
+    eyebrow: "Built for Different Needs",
+    title: "Solutions across",
+    accent: "everyday environments.",
+    description: "Our product categories serve a broad range of residential, commercial and industrial requirements. Final selection depends on project specifications.",
+    items: [
+      { icon: "home", title: "Homes & Residential Communities", text: "Water storage, pressure boosting, filtration, softening and indoor fresh-air requirements for modern homes and residential developments." },
+      { icon: "building", title: "Hotels & Commercial Buildings", text: "Water movement, storage and building-services applications for hotels, offices, retail spaces and mixed-use properties." },
+      { icon: "hospital", title: "Healthcare & Institutions", text: "Water and building-services product categories for hospitals, educational facilities and institutional environments." },
+      { icon: "factory", title: "Industrial Facilities", text: "Water-treatment, pumping and utility-related requirements for factories and operational facilities." },
+      { icon: "wrench", title: "HVAC & Plumbing", text: "Product categories for circulation, pressure, water handling and related mechanical building services." },
+      { icon: "wind", title: "Fresh-Air Applications", text: "Ventilation and energy recovery options for suitable indoor air-management needs." },
+    ],
+  },
+  why: {
+    eyebrow: "Why Choose Us",
+    title: "Experience that works behind",
+    accent: "every drop.",
+    paragraphs: [
+      "Our business spans water treatment, pumping, HVAC, firefighting, water-treatment plants and plumbing installations, with in-house sales and service support. Our journey began in 1997.",
+      "Talk with our team to identify the right product category for your application and confirm model-level specifications, availability and installation requirements.",
+    ],
+    cta: { label: "Know About Us", href: "/about-us" },
+    items: [
+      { title: "Established experience", text: "Our journey began in 1997." },
+      { title: "Multiple solution categories", text: "Water storage, treatment, pressure, pumping and air systems." },
+      { title: "Application-focused approach", text: "Discuss needs across residential, commercial and industrial sites." },
+      { title: "Sales & service support", text: "Reach out for product enquiries and service-related assistance." },
+    ],
+  },
+  faq: {
+    eyebrow: "Quick Answers",
+    title: "Frequently asked",
+    accent: "questions.",
+    description: "A few things to consider when exploring water and air solutions.",
+    items: [
+      { question: "Which product should I choose for my home?", answer: "The right product depends on your needs. Low water pressure may call for a suitable booster system, while hard water may require a water softener. Share your water source, usage and concern with us for guidance." },
+      { question: "Do you offer solutions for commercial and industrial projects?", answer: "We work across water treatment, pumping, HVAC, firefighting, water-treatment plant and plumbing-related applications for domestic, commercial and industrial sectors. Confirm the project scope and equipment selection with our team." },
+      { question: "How do I know whether I need a water softener or an RO system?", answer: "These systems address different water-quality needs. Softening is generally used to reduce hardness, while reverse osmosis is a purification process. Water testing and intended use should guide the choice." },
+      { question: "Are stainless steel water tanks available in different capacities?", answer: "Yes, our stainless steel tanks come in multiple capacities with insulated and non-insulated options. Check the product page or contact us to confirm current sizes, material grades and specifications." },
+      { question: "Can you help with product selection for a project?", answer: "Share the project type, site location, technical requirements and expected demand through the contact page. Our team can help discuss relevant product categories and next steps." },
+      { question: "Where can I get exact specifications and pricing?", answer: "Specifications, pricing, availability and installation requirements can vary by model and application. Contact us to confirm details for your selected product." },
+    ],
+  },
+  cta: {
+    eyebrow: "Let's find your solution",
+    title: "Better water. Better air. Better everyday living.",
+    text: "Tell us what you need for your home, building or project. We can help you explore the relevant product and system categories.",
+  },
+};
+
+export const airPage: SolutionsPageData = {
+  seo: {
+    title: "Air Solutions",
+    description: "Energy recovery ventilation, indoor fresh-air systems and ventilation products for homes, offices and commercial buildings.",
+  },
+  hero: {
+    eyebrow: "Air Solutions",
+    title: "Breathe better.",
+    accent: "Live better.",
+    text: "Discover fresh-air and ventilation solutions, including energy recovery ventilation, indoor fresh-air systems and ventilation products designed for suitable residential, commercial and building-service applications.",
+    video: "/media/videos/hero-air.mp4",
+    poster: "/media/images/category-air.png",
+    primary: { label: "Explore Air Solutions", href: "#range" },
+    secondary: { label: "Talk to Our Team", href: "/contact-us" },
+    chips: ["Fresh Air", "Ventilation", "ERV Systems", "Indoor Comfort"],
+  },
+  facts: [
+    { title: "Fresh-Air Exchange", text: "Bring outdoor air indoors" },
+    { title: "Ventilation Systems", text: "Air movement for buildings" },
+    { title: "Energy Recovery", text: "Help manage heat and moisture" },
+    { title: "Residential & Commercial", text: "Application-led product selection" },
+  ],
+  intro: {
+    eyebrow: "Fresh Air for Modern Spaces",
+    title: "A better indoor environment starts with",
+    accent: "better airflow.",
+    paragraphs: [
+      "Indoor air solutions help manage the movement of stale indoor air and incoming outdoor air. Depending on the selected system, ventilation can support fresh-air exchange and help manage heat and moisture transfer.",
+      "We present air and ventilation products alongside our broader water and building-services range. The right solution depends on room size, occupancy, outdoor air conditions, required airflow, installation layout and the intended use of the space.",
+    ],
+    miniCards: [
+      { title: "Fresh-air planning", text: "Consider air volume, occupancy and the room or building layout." },
+      { title: "Product-led selection", text: "Explore ERV and ventilation categories based on your application." },
+      { title: "Home to commercial", text: "Options to discuss for residential and suitable commercial spaces." },
+      { title: "Sales & service support", text: "Contact us to discuss product specifications and next steps." },
+    ],
+    image: "/media/solutions/air-intro.png",
+    caption: "Air solutions designed around the needs of your space",
+  },
+  range: {
+    eyebrow: "Explore the Air Range",
+    title: "Find the right solution for",
+    accent: "your space.",
+    description: "Explore the main air and ventilation categories. Exact models, capacities, performance data and availability should be confirmed with our team.",
+    items: [
+      { badge: "Fresh Air", kicker: "Energy recovery ventilation", title: "Indoor Fresh-Air System (ERV)", text: "An energy recovery ventilator exchanges stale indoor air with incoming outdoor air and transfers energy between the air streams to help manage heat and moisture, depending on the system design.", image: "/media/solutions/erv.png", tags: ["Fresh-air exchange", "Heat & moisture transfer"], href: "/products/fresh-air-erv", link: "Enquire About ERV" },
+      { badge: "Air Movement", kicker: "Ventilation products", title: "Ventilation Systems", text: "Ventilation products for suitable homes, offices and building-service applications. The correct selection depends on required airflow, mounting position, noise expectations and site conditions.", image: "/media/solutions/air-delta-3.png", tags: ["Air movement", "Home & business"], href: "/products/ventilation-system", link: "Explore Ventilation" },
+      { badge: "Comfort", kicker: "Heating & hot water", title: "Heat Pumps", text: "Heat pump solutions for suitable hot-water and comfort applications. System size and configuration should be selected to match the building demand and installation conditions.", image: "/media/solutions/heat-pump.png", tags: ["Hot-water applications", "System selection"], href: "/products/heat-pumps", link: "Ask About Heat Pumps" },
+      { badge: "Retrofit Options", kicker: "Decentralized fresh air", title: "Wall-Mounted Fresh-Air Units", text: "Wall-mounted ventilation may be considered where a decentralized solution is more suitable than a full ducted arrangement. Confirm availability and specifications for the intended site.", image: "/media/solutions/air-delta-2.png", tags: ["Space-conscious", "Site dependent"], href: "/products/ventilation-system", link: "Discuss Your Space" },
+      { badge: "Fresh-Air Supply", kicker: "Air supply", title: "Fresh-Air Supply Fans", text: "Fresh-air supply products can help introduce outdoor air into suitable spaces. Filtration, airflow and installation requirements should be checked for each application.", image: "/media/solutions/air-delta-4.png", tags: ["Outdoor air supply", "Application specific"], href: "/products/ventilation-system", link: "Ask About Supply Fans" },
+      { badge: "Air Exhaust", kicker: "Stale-air removal", title: "Exhaust & Air-Movement Products", text: "Air exhaust and movement products can support ventilation strategies in suitable rooms and buildings. Confirm the required duty, installation and compatibility before selection.", image: "/media/solutions/ventilation.png", tags: ["Air extraction", "Ventilation planning"], href: "/products/ventilation-system", link: "View Ventilation Range" },
+    ],
+  },
+  steps: {
+    eyebrow: "How to Plan Your Air Solution",
+    title: "From airflow needs to",
+    accent: "the right system.",
+    description: "A suitable solution begins with the space and its ventilation requirements — not simply with choosing a product.",
+    items: [
+      { title: "Assess the space", text: "Identify room size, occupancy, use, available installation space and current ventilation conditions." },
+      { title: "Define airflow needs", text: "Determine required fresh-air and exhaust volumes, operating schedule and relevant site conditions." },
+      { title: "Choose the category", text: "Compare ERV, supply, exhaust and general ventilation options according to the application." },
+      { title: "Confirm installation", text: "Review product data, electrical needs, ducting or wall openings, maintenance access and servicing." },
+    ],
+  },
+  feature: { video: "/media/commercial/showcase.mp4", poster: "/media/commercial/showcase-poster.jpg" },
+  uses: {
+    eyebrow: "Solutions for Different Environments",
+    title: "Air solutions for",
+    accent: "everyday spaces.",
+    description: "The right product depends on the building, its use and the ventilation objectives. Speak with us to discuss your requirements.",
+    items: [
+      { icon: "home", title: "Homes & Apartments", text: "Discuss fresh-air and ventilation options for bedrooms, living areas and residential developments." },
+      { icon: "briefcase", title: "Offices & Workspaces", text: "Ventilation options for suitable office environments, meeting rooms and shared indoor spaces." },
+      { icon: "hotel", title: "Hotels & Hospitality", text: "Explore air-movement and fresh-air requirements for guest rooms and selected common areas." },
+      { icon: "hospital", title: "Healthcare & Institutions", text: "Discuss application-specific ventilation needs with attention to technical and site requirements." },
+      { icon: "building", title: "Commercial Buildings", text: "Options for building-service applications where airflow, layout and operational needs guide selection." },
+      { icon: "wrench", title: "Renovation & Retrofit", text: "Consider whether wall-mounted or decentralized products may suit existing spaces and constraints." },
+    ],
+  },
+  why: {
+    eyebrow: "Why Choose Us",
+    title: "Experience that supports",
+    accent: "better everyday living.",
+    paragraphs: [
+      "Our work spans water treatment and pumping for HVAC, firefighting, water-treatment plants and plumbing installations, serving domestic, commercial and industrial sectors, with in-house sales and service support.",
+      "For air-solution enquiries, share your building type, room or floor area, intended use, ventilation concerns and any known airflow requirements. Our team can help discuss relevant product categories and the information needed to proceed.",
+    ],
+    cta: { label: "Know About Us", href: "/about-us" },
+    items: [
+      { title: "Established business", text: "Our journey began in 1997." },
+      { title: "Complementary product range", text: "Explore ventilation and fresh-air categories alongside broader building solutions." },
+      { title: "Application-led discussion", text: "Discuss site conditions and product suitability before final selection." },
+      { title: "Sales & service support", text: "Contact us for product enquiries and support-related questions." },
+    ],
+  },
+  faq: {
+    eyebrow: "Quick Answers",
+    title: "Frequently asked",
+    accent: "questions.",
+    description: "Helpful starting points for choosing an air or ventilation product.",
+    items: [
+      { question: "What is the difference between ventilation and an air purifier?", answer: "Ventilation exchanges or moves air between indoor and outdoor environments, depending on the system. An air purifier generally filters air already inside a space. They perform different functions, and one does not automatically replace the other." },
+      { question: "What does an ERV system do?", answer: "An Energy Recovery Ventilator exchanges stale indoor air with incoming outdoor air and transfers heat and moisture between the air streams. Actual performance depends on the selected model and operating conditions." },
+      { question: "Which air product is right for my home?", answer: "It depends on the room layout, occupancy, outdoor air conditions, airflow requirement, available installation space and budget. Contact us with these details to discuss suitable categories." },
+      { question: "Can ventilation products be installed in an existing building?", answer: "Some decentralized or wall-mounted products may be suitable for existing spaces, while other systems may require ducting or more extensive planning. A site assessment is recommended before selecting a product." },
+      { question: "Do you offer ventilation products for commercial applications?", answer: "Yes. Contact the team to confirm the models, technical specifications and suitability for your particular commercial project." },
+      { question: "How do I get product specifications and pricing?", answer: "Share the intended application and product category through the contact page. Specifications, availability, pricing and installation requirements should be confirmed with our team." },
+    ],
+  },
+  cta: {
+    eyebrow: "Let's plan your air solution",
+    title: "Breathe better. Build a better indoor environment.",
+    text: "Tell us about your home, workspace or project and the air-related challenge you want to solve.",
+  },
+};
